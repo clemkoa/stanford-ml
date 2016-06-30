@@ -14,6 +14,8 @@ J = 0;
 %               You should set J to the cost.
 
 
+J = (X * theta - y)' * (X * theta - y)/(2*m)
+%J = sum((theta'*X(i)-y(i))^2)/(2*m)
 
 
 
