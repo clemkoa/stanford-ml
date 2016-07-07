@@ -22,9 +22,18 @@ idx = zeros(size(X,1), 1);
 %
 
 
-
-
-
+for i = 1:size(X,1)
+  min = (X(i,:) - centroids(1,:)) * (X(i,:) - centroids(1,:))';
+  index = 1;
+  for k = 1:K
+    t = (X(i,:) - centroids(k,:)) * (X(i,:) - centroids(k,:))';
+    if (t < min)
+      min = t;
+      index = k;
+    end;
+  end;
+  idx(i) = index;
+end;
 
 
 % =============================================================
